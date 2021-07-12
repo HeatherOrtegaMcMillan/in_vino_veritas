@@ -48,6 +48,18 @@ def rename_columns(df):
     
     return df
 
+#############
+
+def the_good_and_the_bad(df):
+    '''
+    This function takes in the wine dataframe and adds 2 columns
+    is_good and is_bad. Returns the df
+    '''
+    df['is_bad'] = (df.quality <=4).astype(int) # all wines that are 4 or lower are 'bad'
+    df['is_good'] = (df.quality  >= 7).astype(int) # all wines that are 7 or higher are 'good'
+    
+    return df
+
 ############# Splitting Function
 
 def banana_split(df):
