@@ -39,6 +39,40 @@ def plot_against_target(df, target, var_list, figsize = (10,5), hue = None):
                     line_kws={'color': 'orange'})
         plt.show()
 
+########### 
+
+def plot_box_against_target(df, target, var_list, figsize = (10,5), hue = None, palette = 'tab10'):
+    '''
+    This function takes in a dataframe, target name, and Var List
+    Will loop through variables (makes sure it's not an Object)
+    And plot them
+    '''
+    
+    for var in var_list:
+        
+        if df[var].dtypes != 'O':
+            # create box plot
+            plt.figure(figsize = figsize)
+            sns.boxplot(data = df, x = target, y = var, palette=palette)
+            plt.title(f'{var} and {target}')
+            
+            mean = round(df[var].mean(),2)
+            plt.axhline(mean, c = 'yellow', lw = 4, alpha = .8)
+            plt.show()
+            
+            print(f'Overall mean for {var} is: {mean}')
+            print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ \n')
+############## 
+
+def get_heatmap(df, target):
+    '''
+    This function will return a heatmap of all variables and there relation to target, use on train dataset.
+    '''
+    plt.figure(figsize=(14,12))
+    heatmap = sns.heatmap(df.corr()[[target]].sort_values(by=target, ascending=False), annot=True, linewidth=0.5,fmt = '.0%',cmap = 'PiYG', center = 0, annot_kws={"size": 13})
+    heatmap.set_title('Feautures Correlating with {}'.format(target))
+
+
 ############
 def eval_ttest_1samp(t, p, alpha = 0.05):
     '''

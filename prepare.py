@@ -60,6 +60,38 @@ def the_good_and_the_bad(df):
     
     return df
 
+#############
+
+def quality_bin_maker(df):
+    '''
+    This function creates one column with the quality split into bad, average and good
+    Quality binned
+    0 == bad
+    1 == average
+    2 == good
+    Returns dataframe with quality_bins returned
+    '''
+    df['quality_bins'] = pd.cut(df.quality,bins = (0,4,6,10), labels=[0,1,2]).astype(int)
+    
+    return df
+
+############# PREPARE FUNCTION
+
+def prepare_wine_df(red_df, white_df):
+
+    white_df, red_df = white_or_red(white_df, red_df)
+
+    df = join_red_and_white(white_df, red_df)
+
+    df = rename_columns(df)
+
+    df = the_good_and_the_bad(df)
+
+    df = quality_bin_maker(df)
+
+    return df
+
+
 ############# Splitting Function
 
 def banana_split(df):
@@ -77,3 +109,8 @@ def banana_split(df):
     print(f'validate --> {validate.shape}')
     print(f'test --> {test.shape}')
     return train, validate, test
+
+#############
+
+
+
