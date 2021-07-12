@@ -5,6 +5,7 @@
 import pandas as pd 
 import numpy as np 
 from sklearn.feature_selection import SelectKBest, f_classif
+from sklearn.metrics import classification_report, confusion_matrix, recall_score
 
 
 ###############
@@ -43,3 +44,12 @@ def all_aboard_the_X_train(X_cols, y_col, train, validate, test):
     
     return X_train, y_train, X_validate, y_validate, X_test, y_test
 
+##############
+
+def print_metrics(model, y, pred, set_name = 'This Set'):
+    
+    print(model)
+    print(f"~~~~~{set_name} Scores~~~~~~")
+    print(classification_report(y, pred))
+    print(confusion_matrix(y, pred))
+    print()

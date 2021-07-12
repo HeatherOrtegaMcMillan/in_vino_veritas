@@ -70,7 +70,7 @@ def get_heatmap(df, target):
     '''
     plt.figure(figsize=(14,12))
     heatmap = sns.heatmap(df.corr()[[target]].sort_values(by=target, ascending=False), annot=True, linewidth=0.5,fmt = '.0%',cmap = 'PiYG', center = 0, annot_kws={"size": 13})
-    heatmap.set_title('Feautures Correlating with {}'.format(target))
+    heatmap.set_title('Features Correlating with {}'.format(target))
 
 
 ############
