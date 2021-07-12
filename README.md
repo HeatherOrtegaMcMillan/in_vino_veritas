@@ -30,20 +30,32 @@ are available (e.g. there is no data about grape types, wine brand, wine selling
 
 
 ### Data Dictionary
-| Column Name                | Use      |
-|----------------------------|----------|
-| `quality`                  | Target   |
-| `fixed acidity`            | Variable |
-| `volatile acidity`         | Variable |
-| `citric acid`              | Variable |
-| `residual sugar`           | Variable |
-| `chlorides`                | Variable |
-| `free sulfur dioxide`      | Variable |
-| `total sulfur dioxide`     | Variable |
-| `density`                  | Variable |
-| `pH`                       | Variable |
-| `sulphates`                | Variable |
-|  `alcohol`                 | Variable |
+
+Two features `is_good` and `is_bad` are boolian, target categories engineered from the `quality` 
+column. The models are attempting to predict whether or not the wine will be a stand out wine
+(rating of 7 or higher), or of poor quality (rating of 4 or below).
+
+| Column Name                | Use       | Type            |
+|----------------------------|-----------|-----------------|
+| `quality`                  | Target    | int64           |
+| `quality_bins`             | Target*   | int64 (boolean) |
+| `is_good`                  | Target*   | int64 (boolean) |
+| `is_bad`                   | Target*   | int64 (boolean) |
+| `fixed acidity`            | Variable  | Float64         |
+| `volatile acidity`         | Variable  | Float64         |
+| `citric acid`              | Variable  | Float64         |
+| `residual sugar`           | Variable  | Float64         |
+| `chlorides`                | Variable  | Float64         |
+| `free sulfur dioxide`      | Variable  | Float64         |
+| `total sulfur dioxide`     | Variable  | Float64         |
+| `density`                  | Variable  | Float64         |
+| `pH`                       | Variable  | Float64         |
+| `sulphates`                | Variable  | Float64         |
+|  `alcohol`                 | Variable  | Float64         |
+| `is_white`                 | Variable* | int64 (boolean) |
+
+
+* indicates an engineered feature
 
 
 
