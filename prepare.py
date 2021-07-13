@@ -73,6 +73,10 @@ def quality_bin_maker(df):
     '''
     df['quality_bins'] = pd.cut(df.quality,bins = (0,4,6,10), labels=[0,1,2]).astype(int)
     
+    wine_categories = {0: 'bad_wine', 1: 'avg_wine', 2 :'good_wine'}
+
+    df['quality_bins_str'] = df.quality_bins.replace(wine_categories)
+    
     return df
 
 ############# PREPARE FUNCTION
