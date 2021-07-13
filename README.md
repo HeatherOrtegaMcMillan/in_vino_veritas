@@ -24,13 +24,15 @@ On the first sip most educated wine enthusiasts can get a good idea of the follo
 
 ### Findings
 
+Tasting and making wine is both a science and an art. With this project I have gained some insights into the science aspect of the process, as much as one can hope from numbers on a screen. Of course there is much more to learn and many more insights to be gained, from the different grapes or manufacturers, that no doubt play into how a wine is received and rated. Delving into local markets as well would be a fantastic project to undertake.
+
 I was able to create a Random Forest model that predicts the quality rating of the wine (as bad, average or good) better than the baseline, with an 80% accuracy. This tool can help winemakers get a better idea of the reception of their product before it hits the shelf. This could be of real benefit to less experienced wine makers who are just starting out and don't quite have their tasting skills down yet. 
 
 The top 3 factors that distinguish bad wines from good wines are:
 
 ``` 'alcohol', 'volatile_acidity', 'free_sulfur_dioxide'```
 
-These qualities, backed up by statistical testing concludes that these are important features of a wine to look out for when creating a batch of wine, because they can have an impact on the reception of that wine in the market. Take a look at the [Stats Testing](#stats_testing) section of this notebook.
+These qualities, backed up by statistical testing concludes that these are important features of a wine to look out for when creating a batch of wine, because they can have an impact on the reception of that wine in the market. 
 
 With more time I would like to refine the model to be better at predicting low rated wines. This way these types of wines can be avoided or modified during the manufacturing process.
 
@@ -53,7 +55,7 @@ are available (e.g. there is no data about grape types, wine brand, wine selling
 ### Project Process
 - For the planning of this project I utilized a [Trello Board](https://trello.com/b/cRhauhJS/wine-ds-project).
 - I went through the stages of the data science pipeline and documented everything in the 
-[final_notebook](https://github.com/HeatherOrtegaMcMillan/in_vino_veritas/blob/main/final_notebook.ipynb).
+[final_notebook](https://nbviewer.jupyter.org/github/HeatherOrtegaMcMillan/in_vino_veritas/blob/4f0966752c51c58f213dcaddf7f0cd172472cfe3/final_notebook.ipynb).
 - Data was acquired (from sources above) and prepared, explored, and ultimately used to create a classification model.
 - 3 custom function modules were created [prepare.py](https://github.com/HeatherOrtegaMcMillan/in_vino_veritas/blob/main/prepare.py), [explore.py](https://github.com/HeatherOrtegaMcMillan/in_vino_veritas/blob/main/explore.py), and [model.py](https://github.com/HeatherOrtegaMcMillan/in_vino_veritas/blob/main/model.py)
 
