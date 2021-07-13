@@ -31,12 +31,13 @@ def explore_univariate(df, figsize = (18,3)):
 
 def plot_against_target(df, target, var_list, figsize = (10,5), hue = None):
     '''
-    Takes in dataframe, target and varialbe list, and plots against target. 
+    Takes in dataframe, target and variable list, and plots against target. 
     '''
     for var in var_list:
         plt.figure(figsize = (figsize))
         sns.regplot(data = df, x = var, y = target, 
                     line_kws={'color': 'orange'})
+        plt.title(f'{target} vs {var}')
         plt.show()
 
 ########### 
