@@ -21,6 +21,7 @@ Well, that just means the physical and chemical properties of a wine. Such as al
 #### What's in a wine?
 On the first sip most educated wine enthusiasts can get a good idea of the following four things: alcohol content, tannin levels, acidity, and residual sugar. They then look for flavor of the wine, and the body of the wine (is it light-bodied, medium-bodied, etc. think density). Because there is such an art to tasting wines, the nuance of the unique flavors, the balance of the different attributes, it would be difficult to just put a number on these things. You'll see that the attributes in this data set are doing their best to do just that. It will be impossible to capture that nuance in just numbers alone, for how can numbers capture the that hint of oakiness mixed with apple residing in your favorite bottle of wine. But with some of the key components quantifiable (alcohol, acidity, density, etc), we might be able to use this information to predict the next top rated wine, before it's even touched the tongue of a sommelier.
 
+Some Initial Ideas I had were that I could categorize the wines into groups in order to classify them as good or bad. Because of the nuance of wine tasting, and the lack of information about grape type and manufacturer, I do not think I'll be able to predict a quality rating with 100% accuracy.
 
 ### Findings
 
@@ -88,9 +89,6 @@ and good wines (rating >= 7).
 |  `alcohol`                 | Variable  | Float64         | Measured in % vol or ABV (Alcohol by Volume)                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | `is_white`                 | Variable* | int64 (boolean) | Boolean value indicating if the wine is white. If 0 wine is red. This is from joining the red and white wine data sets together.                                                                                                                                                                                                                                                                                                                                                        |
 
-
-
-* indicates an engineered feature
 
 
 
